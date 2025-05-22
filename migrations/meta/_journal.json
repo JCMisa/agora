@@ -15,6 +15,13 @@
       "when": 1747311671253,
       "tag": "0001_same_wildside",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1747905797156,
+      "tag": "0002_plain_power_man",
+      "breakpoints": true
     }
   ]
 }

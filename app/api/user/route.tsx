@@ -6,10 +6,12 @@ import { NextResponse } from "next/server";
 interface UserRequest {
   email: string;
   name: string;
+  imageUrl: string;
+  role: string;
 }
 
 export async function POST(req: Request): Promise<NextResponse> {
-  const { email, name }: UserRequest = await req.json(); // fetching from the request body
+  const { email, name, imageUrl, role }: UserRequest = await req.json(); // fetching from the request body
 
   const existingUser = await db
     .select()
@@ -22,11 +24,15 @@ export async function POST(req: Request): Promise<NextResponse> {
       .values({
         name: name,
         email: email,
+        imageUrl: imageUrl,
+        role: role,
       })
       .returning({
         id: usersTable.id,
         name: usersTable.name,
         email: usersTable.email,
+        imageUrl: usersTable.imageUrl,
+        role: usersTable.role,
         subscriptionId: usersTable.subscriptionId,
       });
 

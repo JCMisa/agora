@@ -13,7 +13,8 @@ const monaSans = Mona_Sans({
 
 export const metadata: Metadata = {
   title: "Agora",
-  description: "An online learning platform powered by AI",
+  description:
+    "A employee search site where employees can showcase their skills, and employers can find the right talent.",
 };
 
 export default function RootLayout({

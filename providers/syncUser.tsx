@@ -13,6 +13,8 @@ const SyncUser = ({ children }: { children: React.ReactNode }) => {
       const result = await axios.post("/api/user", {
         email: user?.primaryEmailAddress?.emailAddress,
         name: user?.fullName,
+        imageUrl: user?.imageUrl,
+        role: "employee",
       });
 
       if (result.data) {

@@ -31,7 +31,6 @@ const SyncUser = ({ children }: { children: React.ReactNode }) => {
       if (result.data) {
         console.log("User sync successfully: ", result.data);
       }
-      toast.warning("Email aleady in use");
     } catch (error) {
       console.log("User sync internal error: ", error);
       toast.error("Internal error occured while saving the user");

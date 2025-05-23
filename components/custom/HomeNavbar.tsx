@@ -4,6 +4,7 @@ import { UserButton } from "@clerk/nextjs";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import ModeToggle from "../ModeToggle";
+import UserButtonClient from "../UserButtonClient";
 
 const HomeNavbar = async ({ user }: { user: UserType }) => {
   return (
@@ -11,10 +12,10 @@ const HomeNavbar = async ({ user }: { user: UserType }) => {
       <LogoFull />
 
       <div className="flex items-center gap-4">
-        <ModeToggle />
+        <ModeToggle bg="transparent" />
         {user ? (
           <div className="flex items-center gap-2">
-            <UserButton />
+            <UserButtonClient />
             <div className="flex flex-col">
               <p>{user.name || "User"}</p>
               <span className="text-xs">

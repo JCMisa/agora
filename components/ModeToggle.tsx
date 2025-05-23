@@ -5,7 +5,11 @@ import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 
-export default function ModeToggle() {
+export default function ModeToggle({
+  bg = "bg-light-100 dark:bg-dark-100",
+}: {
+  bg?: string;
+}) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
@@ -17,10 +21,10 @@ export default function ModeToggle() {
 
   return (
     <Button
-      variant="outline"
+      variant="ghost"
       size="icon"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="bg-light-100 dark:bg-dark-100 relative"
+      className={`${bg} h-7 w-7 relative`}
     >
       <div className="flex items-center justify-center">
         <SunIcon className="h-[1.2rem] absolute w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

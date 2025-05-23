@@ -2,7 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const LogoFull = () => {
+const LogoFull = ({
+  width = 20,
+  height = 20,
+  textSize = "sm",
+}: {
+  width?: number;
+  height?: number;
+  textSize?: string;
+}) => {
   return (
     <Link href={"/"} className="flex items-center">
       <Image
@@ -11,10 +19,10 @@ const LogoFull = () => {
         placeholder="blur"
         blurDataURL="/blur.jpg"
         alt="logo"
-        width="20"
-        height="20"
+        width={width}
+        height={height}
       />
-      <p>gora</p>
+      <p className={`text-${textSize}`}>gora</p>
     </Link>
   );
 };
